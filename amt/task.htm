@@ -1,0 +1,282 @@
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+
+<crowd-form answer-format="flatten-objects">
+    <br/>
+    <!--<crowd-modal link-text="See Instructions" link-type="button">
+        <crowd-tabs>
+            <crowd-tab header="Summary">
+                <h1><strong>Overview</strong></h1>
+
+                <p>
+                    In this job, you need to verify if a wine sort is correctly represented by a model.<br/>
+                    This is only a tutorial job, which prepares you for the actual jobs. Therefore, you have the
+                    possibility to check the correctness of your answers before submitting them.
+                    The goal is for you to understand how the platform works,
+                    in what format the questions are presented as well as to get you familiar with the verification of
+                    restrictions.
+
+                </p>
+                <hr>
+                <h1><strong>Steps</strong></h1>
+                <ol>
+                    <li>Examine the wine sort</li>
+                    <li>Examine the model</li>
+                    <li>Decide whether the model correctly represents the wine sort</li>
+                    <li>If the model is invalid, select what defect it includes</li>
+                </ol>
+            </crowd-tab>
+            <crowd-tab header="Detailed Instructions">
+                <h1><strong>Overview</strong></h1>
+
+                <p>
+                    In this job, you need to verify if a wine sort is correctly represented by a model.<br/>
+                    This is only a tutorial job, which prepares you for the actual jobs. Therefore, you have the
+                    possibility to check the correctness of your answers before submitting them.
+                    The goal is for you to understand how the platform works,
+                    in what format the questions are presented as well as to get you familiar with the verification of
+                    restrictions.
+
+                </p>
+                <hr>
+
+                <h1><strong>Steps</strong></h1>
+
+                <ol>
+                    <li>Examine the wine sort</li>
+                    <li>Examine the model</li>
+                    <li>Decide whether the model correctly represents the wine sort</li>
+                    <li>If the model is invalid, select what defect it includes</li>
+                </ol>
+                <hr>
+
+                <h1><strong>Rules & Tips</strong></h1>
+
+                <p><strong>Rules</strong> :</p>
+
+                <ul>
+                    <li>Existential restrictions indicate that there must be a property of the specified type. Other
+                        types are not restricted.<br/>
+                        Keywords in textual models: <strong>some</strong> ; <strong>at least one</strong> <br/>
+                        Representation in a graphical model: <br/> <img src="https://s3.eu-central-1.amazonaws.com/ontology.evaluation.restriction.images.mturksandbox.jobs/QualificationTest-SVG/Q4.svg"
+                                                                        style="max-width: 50%;">
+                        <br/> <br/>
+
+                        <ul>
+                            <li>For example : "PetLoverTypeB has, amongst other things, some Cat pets." - Every instance
+                                of PetLoverTypeB has a Cat pet and may also have other pets.
+                            </li>
+                            <br/>
+                        </ul>
+                    </li>
+                    <li>Universal restrictions indicate that all property values for the specified property must be of a
+                        certain type. All values must be of the type but a property value does not have to exist.<br/>
+                        Keywords in textual models: <strong>only</strong> ; <strong> no other than </strong> <br/>
+                        Representation in a graphical model: <br/> <img src="https://s3.eu-central-1.amazonaws.com/ontology.evaluation.restriction.images.mturksandbox.jobs/QualificationTest-SVG/Q3.svg"
+                                                                        style="max-width: 50%">
+                        <ul>
+                            <li>For example: "PetLoverTypeA has, amongst other things, only Dog pets." - If instances of
+                                PetLoverTypeA have pets, the pets are always dogs. Instances of PetLoverTypeA, however,
+                                may not have any pets.
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <p><strong>Tips</strong>:</p>
+
+                <ul>
+                    <li>The universal restriction does not imply the existential restriction.</li>
+                    <li>If some information is not included in the model, the missing information is not false unless it
+                        contradicts the model.
+                    </li>
+                </ul>
+            </crowd-tab>
+            <crowd-tab header="Examples">
+                <table style="border: 1px solid lightgray; border-radius:5px; -moz-border-radius:5px;">
+                    <tr>
+                        <td style="border-bottom: 1px solid lightgray;border-right: 1px solid lightgray; background-color:#F9FAFB;padding:5px;">
+                            <b>Correct Modeling</b></td>
+                        <td style="border-bottom: 1px solid lightgray; background-color:#F9FAFB;padding:5px;"><b>Incorrect
+                            Modeling</b></td>
+                    </tr>
+                    <tr>
+                        <td style="border-right: 1px solid lightgray;">
+                            <center>
+                                <img src="https://s3.eu-central-1.amazonaws.com/ontology.evaluation.restriction.images.mturksandbox.jobs/tutorial.examples/menu/wine_example.png"
+                                     style="max-width:90%"/>
+
+                            </center>
+                        </td>
+                        <td style="border-right: none">
+                            <center>
+                                <img src="https://s3.eu-central-1.amazonaws.com/ontology.evaluation.restriction.images.mturksandbox.jobs/tutorial.examples/menu/wine_example.png"
+                                     style="max-width:90%"/>
+                            </center>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="border-right: 1px solid lightgray;">
+                            <p style="color: green">
+                                White Burgundy Wine is, amongst other things, made from some Chardonnay grapes and is
+                                also made only from Chardonnay grapes.
+                            </p>
+                        </td>
+                        <td>
+                            <p style="color: red">
+                                White Burgundy Wine is, amongst other things, made only from Chardonnay
+                                grapes.<br/><br/>
+                            </p>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td style="border-right: 1px solid lightgray;">
+                            <p style="color: green">
+                                White Burgundy Wine is, amongst other things, made from at least one Chardonnay grape
+                                and is also made from no other than Chardonnay grapes.
+                            </p>
+                        </td>
+
+                        <td>
+                            <p style="color: red">
+                                White Burgundy Wine is, amongst other things, made from no other than Chardonnay grapes.
+                                <br/><br/>
+                            </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="border-right: 1px solid lightgray;">
+                            <img src="https://s3.eu-central-1.amazonaws.com/ontology.evaluation.restriction.images.mturksandbox.jobs/tutorial.examples/owl-axioms-svg/positive_example.svg"
+                                 style="max-width: 100%">
+
+                        </td>
+                        <td>
+                            <img src="https://s3.eu-central-1.amazonaws.com/ontology.evaluation.restriction.images.mturksandbox.jobs/tutorial.examples/owl-axioms-svg/negative_example.svg"
+                                 style="max-width: 100%">
+                            <br/>
+                            The model does not represent the wine sort correctly as it allows for the possibility that
+                            White Burgundy Wine isn't made from any grapes at all.
+
+                        </td>
+                    </tr>
+
+
+                </table>
+
+                <br/>
+                <br/>
+            </crowd-tab>
+        </crowd-tabs>
+    </crowd-modal>
+    <br/>
+    <br/>
+    Please make sure you are familiar with the rules and examples provided in the <b>Instructions</b> before answering
+    the question.
+    <br/>
+    <br/>
+    <br/>-->
+
+    <short-instructions>
+        <b>Your job</b><br/>
+        You are shown some statements in the general area of movies (containing two entities and their connection) that you need to grade. You should ignore grammatical mistakes in the statements and only grade the entities and their connection. It doesn't matter if the statement is just one of multiple correct answers, just grade the statement you see. You will have to follow the provided links or use your preferred web search to get more information about the meaning of some entities as only their name is shown, but most entities appear in multiple statements. The rating you give a statement should depend on how close to the correct answer (which you might have to find yourself) the statement is, not just whether it is correct or not.<br/>
+        <br/>
+        The code can be built by using the provided numbers (eg. x-y-z) and writing the x-th letter of the first entity, the y-th letter of the connection and the z-th letter of the second entity, small and capital letters can't be interchanged for this and spaces need to be counted as well and replaced with "_" in the code. This is not the only criteria for acceptance but a required one.<br/>
+        <br/>
+        <b>Example A</b><br/>
+        Numbers 3-7-13<br/>
+        <a href="http://dbpedia.org/page/Avatar_(2009_film)">Avatar (2009 film)</a> <a href="http://dbpedia.org/ontology/director"> director</a> <a href="http://dbpedia.org/page/James_Cameron">James Cameron</a><br/>
+        <a href="http://dbpedia.org/page/James_Cameron">James Cameron</a> is <a href="http://dbpedia.org/ontology/director">director</a> of <a href="http://dbpedia.org/page/Avatar_(2009_film)">Avatar (2009 film)</a><br/>
+        <br/>
+        Code: ao_<br/>
+        <br/>
+        This example would be considered completely correct and rated with a rating of 5. Note that it wouldn't matter if there ware also other directors besides him or if he also had other relations to this movie.<br/>
+        <br/>
+        <b>Example B</b><br/>
+        Numbers 9-3-1<br/>
+        <a href="http://dbpedia.org/page/Titanic_(1997_film)">Titanic (1997 film)</a> <a href="http://dbpedia.org/ontology/producer">producer</a> <a href="http://dbpedia.org/page/James_Cameron">James Cameron</a><br/>
+        <a href="http://dbpedia.org/page/James_Cameron">James Cameron</a> is <a href="http://dbpedia.org/ontology/producer">producer</a> of <a href="http://dbpedia.org/page/Titanic_(1997_film)">Titanic (1997 film)</a><br/>
+        <br/>
+        Code: (oT<br/>
+        <br/>
+        This example would be considered partially wrong because James Cameron was not the producer of the movie but arguably had similar jobs. Your rating should reflect how similar his job was to the job of producer.
+    </short-instructions>
+
+    <!--<table style="width:90%; text-align: center;">
+        <tr>
+            <th style="border-bottom:2px solid black; border-right:2px solid black;">Subject</th>
+            <th style="border-bottom:2px solid black; border-right:2px solid black;">Predicate</th>
+            <th style="border-bottom:2px solid black;">Object</th>
+        </tr>
+        <tr>
+            <td style="text-align: center">${s}</td>
+            <td style="text-align: center">${p}</td>
+            <td style="text-align: center">${o}</td>
+        </tr>
+    </table>-->
+    Please read the instructions carefully before answering any questions!<br/>
+    <br/>
+    This statement could be read either as<br/>
+    "<a href="${s}">${s_name}</a> has <a href="${p}">${p_name}</a> <a href="${o}">${o_name}</a>"<br/>
+    or<br/>
+    "<a href="${o}">${o_name}</a> is <a href="${p}">${p_name}</a> of <a href="${s}">${s_name}</a>".<br/>
+    Please be aware that this is one and the same statement.<br/>
+    <br/>
+    <br/>
+    How close to the correct answer is this statement (1 for not close at all, 5 for completely correct)?<br/>
+    <crowd-slider name="stars" min="1" max="5" step="0.5" pin="true" editable required></crowd-slider>
+
+    <label for="comment" id="commentLabel"> Comment (optional) </label> <br/>
+    <textarea cols="60" id="comment" name="comment" placeholder="In case you have any additional remarks please add them here" rows="4"></textarea>
+    <br/>
+    <br/>
+    Numbers for this code: ${ver_num}
+    <crowd-input name="code" label="Code (see instructions)" required></crowd-input>
+</crowd-form>
+
+<style>
+    table {
+        border-collapse: collapse;
+        table-layout: fixed;
+        width: 100%;
+    }
+
+    tr {
+        border: none;
+    }
+
+    td {
+        border-right: solid 2px black;
+        width: 45%;
+    }
+
+    table tr:first-child th {
+        border-top: 0;
+    }
+
+    table tr:last-child td {
+        border-bottom: 0;
+    }
+
+    table tr td:first-child,
+    table tr th:first-child {
+        border-left: 0;
+    }
+
+    table tr td:last-child,
+    table tr th:last-child {
+        border-right: 0;
+    }
+
+    img {
+        display: block;
+    }
+</style>
+
+<!--<script>
+    if ((document.getElementById("axiom").textContent.startsWith("http"))) {
+        document.getElementById("axiom").innerHTML = "<img style='max-width: 100%' src='{axiom}';  display: block; />";
+    }
+</script>-->
+
