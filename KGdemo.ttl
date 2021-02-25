@@ -1,0 +1,73 @@
+@prefix ns1: <http://example.org/r/> .
+@prefix ns2: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/capitals/Berlin> ns1:isCapitalOf <http://example.org/countries/Germany> ;
+    ns2:prefLabel "Berlin"@en .
+
+<http://example.org/capitals/Canberra> ns1:isCapitalOf <http://example.org/countries/Australia> ;
+    ns2:prefLabel "Canberra"@en .
+
+<http://example.org/capitals/Paris> ns1:isCapitalOf <http://example.org/countries/France> ;
+    ns2:prefLabel "Paris"@en .
+
+<http://example.org/capitals/Tokyo> ns1:isCapitalOf <http://example.org/countries/Japan> ;
+    ns2:prefLabel "Tokyo"@en .
+
+<http://example.org/capitals/Vienna> ns1:isCapitalOf <http://example.org/countries/Austria> ;
+    ns2:prefLabel "Vienna"@en .
+
+<http://example.org/capitals/Washington> ns1:isCapitalOf <http://example.org/countries/USA> ;
+    ns2:prefLabel "Washington"@en .
+
+<http://example.org/continents/America> ns2:prefLabel "America"@en .
+
+<http://example.org/continents/Asia> ns2:prefLabel "Asia"@en .
+
+<http://example.org/countries/Australia> ns1:isOn <http://example.org/continents/Australia> ;
+    ns1:speaks <http://example.org/languages/English> ;
+    ns2:prefLabel "Australia"@en .
+
+<http://example.org/countries/Austria> ns1:isOn <http://example.org/continents/Europe> ;
+    ns1:speaks <http://example.org/languages/German>,
+        <http://example.org/languages/Random>,
+        <http://example.org/languages/UndefinableGibberish> ;
+    ns1:undefinable <http://example.org/languages/Random> ;
+    ns1:zerovec <http://example.org/languages/HalfRandom> ;
+    ns2:prefLabel "Austria"@en .
+
+<http://example.org/countries/France> ns1:isOn <http://example.org/continents/Europe> ;
+    ns1:speaks <http://example.org/languages/French> ;
+    ns2:prefLabel "France"@en .
+
+<http://example.org/countries/Germany> ns1:isOn <http://example.org/continents/Europe> ;
+    ns1:speaks <http://example.org/languages/German> ;
+    ns2:prefLabel "Germany"@en .
+
+<http://example.org/countries/Japan> ns1:isOn <http://example.org/continents/Asia> ;
+    ns1:speaks <http://example.org/languages/Japanese> ;
+    ns2:prefLabel "Japan"@en .
+
+<http://example.org/countries/USA> ns1:isOn <http://example.org/continents/America> ;
+    ns1:speaks <http://example.org/languages/English> ;
+    ns2:prefLabel "U.S.A."@en .
+
+<http://example.org/languages/French> ns2:prefLabel "French"@en .
+
+<http://example.org/languages/HalfRandom> ns2:prefLabel "Austria RandomTndsfkjnebkjabd"@en .
+
+<http://example.org/languages/Japanese> ns2:prefLabel "Japanese"@en .
+
+<http://example.org/languages/UndefinableGibberish> ns2:prefLabel "Undefinable Gibberish"@en .
+
+<http://example.org/languages/English> ns2:prefLabel "English"@en .
+
+<http://example.org/languages/German> ns2:prefLabel "German"@en .
+
+<http://example.org/languages/Random> ns2:prefLabel "RandomTndsfkjnebkjabd"@en .
+
+<http://example.org/continents/Europe> ns2:prefLabel "Europe"@en .
+
